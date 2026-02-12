@@ -356,7 +356,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
   const [growthRate, setGrowthRate] = useState('3.5');
   const [companySize, setCompanySize] = useState<CompanySize>('중소기업');
   const [location, setLocation] = useState<Location>('수도권');
-  const [useGrant, setUseGrant] = useState(true);
+  const [useGrant, setUseGrant] = useState(false);
   const [operationYears, setOperationYears] = useState('10');
 
   // 자격 계산기에서 데이터 수신
@@ -575,8 +575,8 @@ export function CostBenefitCalculator({ initialData }: Props) {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="cb-at">연간 종합소득세/법인세 (만원)</Label>
-                <Input id="cb-at" type="number" min="0" max="100000" value={annualTax} onChange={e => {
-                  const v = Math.min(100000, Math.max(0, parseInt(e.target.value) || 0));
+                <Input id="cb-at" type="number" min="0" max="1000000" value={annualTax} onChange={e => {
+                  const v = Math.min(1000000, Math.max(0, parseInt(e.target.value) || 0));
                   setAnnualTax(String(v));
                 }} placeholder="0" />
                 <p className="text-xs text-muted-foreground">세액감면 계산에 사용됩니다</p>
