@@ -899,7 +899,12 @@ export function CostBenefitCalculator({ initialData }: Props) {
           {rows.length > 0 && (
             <Card>
               <CardHeader>
-                <CardTitle className="text-base font-[family-name:var(--font-display)]">{years}년 시뮬레이션</CardTitle>
+                <CardTitle className="text-base font-[family-name:var(--font-display)]">
+                  {years}년 시뮬레이션
+                  <span className="ml-2 text-sm font-normal text-muted-foreground">
+                    (세금 : {fmtWon(at)}, 장애인 : {dc}명 고용, 지원금 : {useGrant ? '수령' : '미수령'})
+                  </span>
+                </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
