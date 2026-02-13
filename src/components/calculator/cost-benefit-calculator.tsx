@@ -182,6 +182,7 @@ interface YearRow {
   creditUsed: number;     // 해당 연도 실제 사용(인출)액
   creditBalance: number;  // 연말 적립 잔액
   annualGrant: number;
+  annualServiceSaving: number; // 용역 절감액
   annualNet: number;
   cumulative: number;
 }
@@ -194,6 +195,7 @@ function simulate(p: {
   fte: number;
   years: number;
   includeGrant: boolean;
+  sv: number; // 월 용역 절감액 (원)
 }): YearRow[] {
   const rows: YearRow[] = [];
   let cum = 0;
@@ -218,6 +220,7 @@ function simulate(p: {
 
     const annualTax = taxReduction(p.at, p.dc, y);
     const annualGrant = y === 1 ? grant : 0;
+    const annualServiceSaving = p.sv * 12;
 
     // 고용세액공제: 올해 발생분은 적립만 (올해 사용 불가)
     const creditEarned = calcEmployCredit(p.fte, p.cs, p.loc, y);
@@ -233,7 +236,7 @@ function simulate(p: {
     // 올해 발생 공제를 적립 (사용 후 적립 → 올해분은 내년부터 사용 가능)
     creditBank += creditEarned;
 
-    const annualNet = annualIncentive + annualTax + creditUsed + annualGrant - annualCost - annualConsulting;
+    const annualNet = annualIncentive + annualTax + creditUsed + annualGrant + annualServiceSaving - annualCost - annualConsulting;
     cum += annualNet;
 
     rows.push({
@@ -249,6 +252,7 @@ function simulate(p: {
       creditUsed,
       creditBalance: creditBank,
       annualGrant,
+      annualServiceSaving,
       annualNet,
       cumulative: cum,
     });
@@ -274,6 +278,7 @@ function findOptimalCount(p: {
   ew: number; at: number; gr: number;
   cs: CompanySize; loc: Location;
   years: number; includeGrant: boolean;
+  sv: number;
 }): {
   minPoint: OptimalPoint;
   bestPoint: OptimalPoint;
@@ -305,6 +310,7 @@ function findOptimalCount(p: {
       ew: p.ew, at: p.at, gr: p.gr,
       cs: p.cs, loc: p.loc,
       fte, years: p.years, includeGrant: p.includeGrant,
+      sv: p.sv,
     });
 
     const cumulative = rows.length > 0 ? rows[rows.length - 1].cumulative : 0;
@@ -358,6 +364,8 @@ export function CostBenefitCalculator({ initialData }: Props) {
   const [location, setLocation] = useState<Location>('수도권');
   const [useGrant, setUseGrant] = useState(false);
   const [operationYears, setOperationYears] = useState('10');
+  const [serviceCost, setServiceCost] = useState('0');
+  const [serviceReduction, setServiceReduction] = useState('50');
 
   // 자격 계산기에서 데이터 수신
   useEffect(() => {
@@ -422,6 +430,10 @@ export function CostBenefitCalculator({ initialData }: Props) {
   const fteRatio = calcFteRatio(dh, wd);
   const fteCount = dc * fteRatio; // 상시근로자 환산 인원
 
+  const svCost = (parseInt(serviceCost) || 0) * 10_000;
+  const svRate = Math.max(10, Math.min(100, parseInt(serviceReduction) || 50));
+  const monthlyServiceSaving = Math.round(svCost * svRate / 100);
+
   const mCost = cost1 * dc;
   const mIncentive = inc1 ? inc1.total : 0;
   const mTaxReduction = dc > 0 ? Math.round(taxReduction(at, dc, 1) / 12) : 0;
@@ -431,12 +443,12 @@ export function CostBenefitCalculator({ initialData }: Props) {
     : 0;
   const consultingFee = dc > 0 ? calcConsultingFee(dc) : 0;
   const mMgmt = dc * MGMT_PER_HEAD_MONTHLY;
-  const mNet = mIncentive + mTaxReduction - mCost - mMgmt;
+  const mNet = mIncentive + mTaxReduction + monthlyServiceSaving - mCost - mMgmt;
 
   // ── 최적 고용 수 탐색 ──
   const optimal = useMemo(() =>
-    findOptimalCount({ dh, wd, gen: gender, ew, at, gr, cs: companySize, loc: location, years, includeGrant: useGrant }),
-    [dh, wd, gender, ew, at, gr, companySize, location, years, useGrant]
+    findOptimalCount({ dh, wd, gen: gender, ew, at, gr, cs: companySize, loc: location, years, includeGrant: useGrant, sv: monthlyServiceSaving }),
+    [dh, wd, gender, ew, at, gr, companySize, location, years, useGrant, monthlyServiceSaving]
   );
   // 바 너비 계산용
   const optBarPoints = [optimal.minPoint, optimal.bestPoint, ...(optimal.endPoint ? [optimal.endPoint] : [])];
@@ -444,7 +456,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
   const optBarPct = (cum: number) => Math.max(4, (Math.abs(cum) / optMaxAbs) * 100);
 
   // ── 시뮬레이션 ──
-  const rows = dc > 0 ? simulate({ dc, sc, mc, dh, wd, gen: gender, ew, at, gr, cs: companySize, loc: location, fte: fteCount, years, includeGrant: useGrant }) : [];
+  const rows = dc > 0 ? simulate({ dc, sc, mc, dh, wd, gen: gender, ew, at, gr, cs: companySize, loc: location, fte: fteCount, years, includeGrant: useGrant, sv: monthlyServiceSaving }) : [];
 
   const periodSums = [
     { label: '1~3년차 (100%)', rows: rows.filter(r => r.year <= 3) },
@@ -467,6 +479,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
         { label: '월 세금감면 (1~3년)', value: fmtWon(mTaxReduction), sub: at > 0 ? `연 ${fmtWon(taxReduction(at, dc, 1))} ÷ 12` : '소득세 미입력', icon: ShieldCheck, color: 'text-blue-600' },
         { label: '고용세액공제 (적립총액)', value: fmtWon(creditTotal), sub: creditEligible > 0 ? `${creditSchedule.length}년간 적립, 남은 세금에 사용` : companySize !== '중소기업' ? `최소 ${MIN_INCREASE[companySize]}명 초과 필요` : fteRatio === 0 ? '주 15시간 미만 제외' : '', icon: Landmark, color: 'text-violet-600' },
         { label: '무상지원금 (일시)', value: useGrant ? fmtWon(grant) : '미수령', sub: useGrant ? `${dc}명 × 4,000만원 (한도 10억)` : `의무운영 ${minYears}년`, icon: Gift, color: useGrant ? 'text-amber-600' : 'text-muted-foreground' },
+        ...(monthlyServiceSaving > 0 ? [{ label: '월 용역 절감', value: fmtWon(monthlyServiceSaving), sub: `월 ${fmtWon(svCost)} × ${svRate}% 대체`, icon: Banknote, color: 'text-teal-600' }] : []),
         { label: '월 순비용', value: fmtWon(Math.abs(mNet)), sub: mNet >= 0 ? '순이익 (무상지원금·세액공제 제외)' : '순비용 (무상지원금·세액공제 제외)', icon: mNet >= 0 ? TrendingUp : TrendingDown, color: mNet >= 0 ? 'text-emerald-600' : 'text-red-600' },
       ]
     : [];
@@ -608,6 +621,28 @@ export function CostBenefitCalculator({ initialData }: Props) {
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── 용역 절감 ── */}
+          <div className="mt-4 border-t pt-4">
+            <p className="mb-3 text-sm font-medium text-muted-foreground">기존 용역(청소 등) 비용 절감</p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="space-y-2">
+                <Label htmlFor="cb-svc">현재 월 용역비 (만원)</Label>
+                <Input id="cb-svc" type="number" min="0" max="100000" value={serviceCost} onChange={e => {
+                  const v = Math.max(0, parseInt(e.target.value) || 0);
+                  setServiceCost(String(v));
+                }} placeholder="0" />
+                <p className="text-xs text-muted-foreground">청소·경비·세탁 등 외주 용역 월 비용</p>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="cb-svr">장애인 인력 대체 절감율 ({svRate}%)</Label>
+                <Input id="cb-svr" type="range" min="10" max="100" step="10" value={serviceReduction} onChange={e => setServiceReduction(e.target.value)} className="h-9" />
+                <p className="text-xs text-muted-foreground">
+                  월 {fmtWon(svCost)} × {svRate}% = <strong className="text-emerald-600">{fmtWon(monthlyServiceSaving)}/월</strong> 절감
+                </p>
               </div>
             </div>
           </div>
@@ -902,7 +937,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
                 <CardTitle className="text-base font-[family-name:var(--font-display)]">
                   {years}년 시뮬레이션
                   <span className="ml-2 text-sm font-normal text-muted-foreground">
-                    (세금 : {fmtWon(at)}, 장애인 : {dc}명 고용, 지원금 : {useGrant ? '수령' : '미수령'})
+                    (세금 : {fmtWon(at)}, 장애인 : {dc}명 고용, 지원금 : {useGrant ? '수령' : '미수령'}{monthlyServiceSaving > 0 ? `, 용역절감 : ${fmtWon(monthlyServiceSaving)}/월` : ''})
                   </span>
                 </CardTitle>
               </CardHeader>
@@ -922,6 +957,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
                         <TableHead className="text-right">잔액</TableHead>
                         <TableHead className="text-right">장려금</TableHead>
                         <TableHead className="text-right">무상지원금</TableHead>
+                        {monthlyServiceSaving > 0 && <TableHead className="text-right">용역절감</TableHead>}
                         <TableHead className="text-right">연 순이익</TableHead>
                         <TableHead className="text-right">누적</TableHead>
                       </TableRow>
@@ -953,6 +989,11 @@ export function CostBenefitCalculator({ initialData }: Props) {
                           <TableCell className="text-right text-amber-600">
                             {r.annualGrant > 0 ? fmtEok(r.annualGrant) : '-'}
                           </TableCell>
+                          {monthlyServiceSaving > 0 && (
+                            <TableCell className="text-right text-teal-600">
+                              {fmtEok(r.annualServiceSaving)}
+                            </TableCell>
+                          )}
                           <TableCell className={`text-right font-[family-name:var(--font-display)] font-semibold ${r.annualNet >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
                             {r.annualNet >= 0 ? '+' : ''}{fmtEok(r.annualNet)}
                           </TableCell>
