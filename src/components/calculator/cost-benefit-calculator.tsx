@@ -356,7 +356,7 @@ export function CostBenefitCalculator({ initialData }: Props) {
   const [severeCount, setSevereCount] = useState('3');
   const [dailyHours, setDailyHours] = useState('4');
   const [weeklyDays, setWeeklyDays] = useState('5');
-  const [gender, setGender] = useState<Gender>('남성');
+  const [gender, setGender] = useState<Gender>('혼합');
   const [existingWorkers, setExistingWorkers] = useState('5');
   const [annualTax, setAnnualTax] = useState('30000');
   const [growthRate, setGrowthRate] = useState('3.5');
