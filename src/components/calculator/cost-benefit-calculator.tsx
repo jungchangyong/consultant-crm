@@ -465,6 +465,11 @@ export function CostBenefitCalculator({ initialData }: Props) {
   ].map(p => ({ label: p.label, total: p.rows.reduce((s, r) => s + r.annualNet, 0) }));
   const totalNet = rows.length > 0 ? rows[rows.length - 1].cumulative : 0;
 
+  // 퇴직금: 운영기간 종료 후 일괄 퇴사 가정 (주 15시간 이상 근로자만)
+  const lastYearWage = rows.length > 0 ? monthlyWage(rows[rows.length - 1].hourlyWage, dh, wd) : 0;
+  const totalRetirement = dh * wd >= 15 ? lastYearWage * years * dc : 0;
+  const totalNetAfterRetirement = totalNet - totalRetirement;
+
   // 통합고용세액공제 공제 대상 인원 (FTE 환산 기준)
   const creditEligible = Math.max(0, fteCount - (MIN_INCREASE[companySize] ?? 0));
   const creditKey = companySize === '중소기업' ? `중소기업_${location}` : companySize;
@@ -1032,6 +1037,35 @@ export function CostBenefitCalculator({ initialData }: Props) {
                     </p>
                   </div>
                 </div>
+
+                {totalRetirement > 0 && (
+                  <div className="mt-4 border-t pt-4 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">{years}년 누적 순이익</span>
+                      <span className={`font-[family-name:var(--font-display)] font-semibold ${totalNet >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                        {totalNet >= 0 ? '+' : ''}{fmtEok(totalNet)}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground">퇴직금 정산 (일괄)</span>
+                      <span className="font-[family-name:var(--font-display)] font-semibold text-red-600">
+                        -{fmtEok(totalRetirement)}
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between border-t pt-2">
+                      <span className="text-sm font-bold">실질 순이익</span>
+                      <span className={`font-[family-name:var(--font-display)] text-xl font-bold ${totalNetAfterRetirement >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                        {totalNetAfterRetirement >= 0 ? '+' : ''}{fmtEok(totalNetAfterRetirement)}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      퇴직금 = {years}년차 월급여 {fmtWon(lastYearWage)} × {years}년 × {dc}명 = {fmtWon(totalRetirement)}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      * {years}년 운영 후 장애인 {dc}명 전원 퇴사 가정, 퇴직금 = 마지막 월 평균임금 × 근속년수
+                    </p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           )}
