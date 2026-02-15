@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>장애인표준사업장 혜택 안내 | 함께 성장하는 일터</title>
+<meta name="description" content="장애인표준사업장 설립 시 받을 수 있는 무상지원금, 세제혜택, 고용장려금 등 모든 혜택을 한눈에 확인하세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy-deep: #0F2A4A;
+  --navy-dark: #0A1628;
+  --navy-mid: #1B3A5C;
+  --blue: #1B5E9E;
+  --gold: #F59E0B;
+  --green: #22C55E;
+  --purple: #8B5CF6;
+  --gray-text: #6B7B8D;
+  --gray-border: #E8E8E8;
+  --bg-light: #F8FAFB;
+  --bg-card: #FAFBFC;
+  --white: #FFFFFF;
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy-deep);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Skip Nav */
+.skip-nav {
+  position: absolute; top: -100%; left: 16px; z-index: 10000;
+  padding: 12px 24px; background: var(--navy-deep); color: var(--white);
+  border-radius: 0 0 8px 8px; font-weight: 600; transition: top 0.2s;
+}
+.skip-nav:focus { top: 0; outline: 3px solid var(--gold); outline-offset: 2px; }
+
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+
+/* ===== HEADER ===== */
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 80px; background: rgba(250,251,252,0.92);
+  border-bottom: 1px solid var(--gray-border);
+  position: sticky; top: 0; z-index: 1000;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+.header-logo { display: flex; align-items: center; gap: 12px; }
+.header-logo-mark {
+  width: 36px; height: 36px; background: var(--blue); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+.header-logo-mark svg { width: 20px; height: 20px; color: var(--white); }
+.header-logo-text {
+  font-family: var(--font-heading); font-size: 18px; font-weight: 600; color: var(--navy-deep);
+}
+.header-nav { display: flex; align-items: center; gap: 24px; }
+.header-nav a {
+  font-family: var(--font-body); font-size: 14px; color: var(--gray-text);
+  transition: color 0.2s;
+}
+.header-nav a.active { color: var(--navy-deep); font-weight: 600; }
+.header-nav a:hover { color: var(--navy-deep); }
+.header-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; background: var(--blue); border-radius: 4px;
+  font-family: var(--font-heading); font-size: 13px; font-weight: 500;
+  color: var(--white); border: none; cursor: pointer; transition: all 0.2s;
+}
+.header-cta:hover { background: #164f87; transform: translateY(-1px); }
+
+.header-accent {
+  height: 3px; width: 100%;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--gold) 50%, var(--green) 100%);
+}
+
+.mobile-menu-btn {
+  display: none; background: none; border: none; padding: 8px; cursor: pointer; color: var(--navy-deep);
+}
+@media (max-width: 768px) {
+  .header-logo-text { font-size: 14px; white-space: nowrap; }
+  .header-cta { display: none; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; width: 100%; height: 600px; overflow: hidden;
+  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 60%, var(--blue) 100%);
+}
+.hero-deco-circle1 {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: var(--blue); opacity: 0.12; left: -200px; top: -150px;
+}
+.hero-deco-circle2 {
+  position: absolute; width: 350px; height: 350px; border-radius: 50%;
+  background: var(--gold); opacity: 0.08; right: -60px; bottom: -70px;
+}
+.hero-deco-line1 {
+  position: absolute; width: 180px; height: 2px;
+  background: rgba(245, 158, 11, 0.31); transform: rotate(-12deg);
+  left: 90px; top: 490px;
+}
+.hero-deco-line2 {
+  position: absolute; width: 100px; height: 1px;
+  background: rgba(255,255,255,0.13); transform: rotate(25deg);
+  right: 160px; top: 160px;
+}
+.hero-deco-dot1 {
+  position: absolute; width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(245,158,11,0.5); left: 210px; top: 110px;
+}
+.hero-deco-dot2 {
+  position: absolute; width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.25); left: 820px; top: 80px;
+}
+.hero-deco-dot3 {
+  position: absolute; width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(255,255,255,0.08); left: 380px; top: 520px;
+}
+
+.hero-content {
+  position: absolute; left: 120px; top: 100px;
+  display: flex; flex-direction: column; gap: 28px; width: 660px; z-index: 2;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+  padding: 6px 14px; border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.hero-badge-dot {
+  width: 8px; height: 8px; background: #4ADE80; border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-badge-text {
+  font-family: var(--font-body); font-size: 12px; color: rgba(255,255,255,0.73);
+}
+.hero-h1 {
+  font-family: var(--font-heading); font-size: 48px; font-weight: 700;
+  color: var(--white); letter-spacing: -1.5px; line-height: 1.2;
+}
+.hero-h1-gold {
+  font-family: var(--font-heading); font-size: 48px; font-weight: 700;
+  color: var(--gold); letter-spacing: -1.5px; line-height: 1.2;
+}
+.hero-subline {
+  font-family: var(--font-body); font-size: 16px; color: rgba(255,255,255,0.67);
+  line-height: 1.75; max-width: 520px;
+}
+.hero-cta-row { display: flex; align-items: center; gap: 14px; }
+.hero-cta-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; background: var(--gold); border-radius: 4px;
+  font-family: var(--font-heading); font-size: 15px; font-weight: 600;
+  color: var(--navy-deep); border: none; cursor: pointer; transition: all 0.25s;
+}
+.hero-cta-primary:hover { background: #e6910a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.3); }
+.hero-cta-primary svg { width: 16px; height: 16px; }
+.hero-cta-secondary {
+  display: inline-flex; align-items: center;
+  padding: 14px 28px; border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.31);
+  font-family: var(--font-heading); font-size: 15px; font-weight: 500;
+  color: rgba(255,255,255,0.87); background: none; cursor: pointer; transition: all 0.25s;
+}
+.hero-cta-secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+.hero-image {
+  position: absolute; right: 110px; top: 80px; width: 500px; height: 440px;
+  border-radius: 12px; overflow: hidden; opacity: 0.85;
+  background: linear-gradient(135deg, #1B3A5C, #1B5E9E);
+}
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.hero-image-overlay {
+  position: absolute; inset: 0; border-radius: 12px;
+  background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 60%);
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+  position: relative; width: 100%; height: 120px;
+  background: var(--bg-light); border-bottom: 1px solid var(--gray-border);
+}
+.stats-bar-inner {
+  display: flex; align-items: center; justify-content: center; height: 100%;
+  padding: 0 80px; gap: 0; max-width: 1200px; margin: 0 auto;
+}
+.stat-item { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.stat-separator {
+  width: 1px; height: 50px; background: #D0D0D0; margin: 0 30px;
+}
+.stat-value {
+  font-family: var(--font-heading); font-size: 32px; font-weight: 700;
+  color: var(--blue); letter-spacing: -1.5px;
+}
+.stat-label {
+  font-family: var(--font-body); font-size: 14px; color: var(--gray-text);
+}
+.stat-accent {
+  position: absolute; left: 80px; bottom: 6px;
+  width: 40px; height: 3px; background: var(--gold);
+}
+
+/* ===== SECTION COMMON ===== */
+.section { padding: 80px max(120px, calc((100% - 1160px) / 2)); }
+.section-white { background: var(--white); }
+.section-light { background: var(--bg-card); }
+.section-alt { background: var(--bg-light); }
+.section-dark { background: var(--navy-deep); color: var(--white); }
+
+.section-header { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; }
+.section-tag {
+  font-family: var(--font-heading); font-size: 13px; font-weight: 600;
+  letter-spacing: 2px; color: var(--blue);
+}
+.section-dark .section-tag { color: var(--gold); }
+.section-title {
+  font-family: var(--font-heading); font-size: 36px; font-weight: 700;
+  letter-spacing: -1px; color: var(--navy-deep);
+}
+.section-dark .section-title { color: var(--white); }
+.section-desc {
+  font-family: var(--font-body); font-size: 16px; color: var(--gray-text);
+  line-height: 1.7; max-width: 580px;
+}
+.section-dark .section-desc { color: rgba(255,255,255,0.6); }
+
+/* ===== 01 제도소개 ===== */
+.intro-cards { display: flex; gap: 24px; }
+.intro-card {
+  flex: 1; display: flex; flex-direction: column; gap: 20px;
+  padding: 32px; border-top: 4px solid var(--blue); border-radius: 0 0 8px 8px;
+  background: var(--white); box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.intro-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.intro-card:nth-child(2) { border-top-color: var(--gold); }
+.intro-card:nth-child(3) { border-top-color: var(--green); }
+.intro-card-icon {
+  width: 48px; height: 48px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+.intro-card-icon.blue { background: #EFF6FF; color: var(--blue); }
+.intro-card-icon.gold { background: #FFF7ED; color: var(--gold); }
+.intro-card-icon.green { background: #F0FDF4; color: var(--green); }
+.intro-card-icon svg { width: 24px; height: 24px; }
+.intro-card-title {
+  font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--navy-deep);
+}
+.intro-card-desc {
+  font-family: var(--font-body); font-size: 14px; color: var(--gray-text); line-height: 1.6;
+}
+
+/* ===== 02 정부지원금 ===== */
+.grant-content { display: flex; gap: 32px; }
+.grant-table-wrap {
+  flex: 1; background: var(--white); border: 1px solid var(--gray-border); border-radius: 8px; overflow: hidden;
+}
+.grant-table-header {
+  background: var(--navy-deep); padding: 20px 24px;
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--white);
+}
+.grant-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; border-bottom: 1px solid var(--gray-border);
+}
+.grant-row:last-child { border-bottom: none; }
+.grant-row-label { font-family: var(--font-body); font-size: 14px; color: var(--navy-deep); }
+.grant-row-value {
+  font-family: var(--font-heading); font-size: 14px; font-weight: 600; color: var(--blue);
+}
+.grant-highlights { display: flex; flex-direction: column; gap: 24px; width: 400px; }
+.grant-highlight {
+  display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 8px;
+}
+.grant-highlight-primary { background: var(--navy-deep); }
+.grant-highlight-blue { background: var(--blue); position: relative; }
+.grant-hl-icon { color: var(--gold); }
+.grant-hl-icon svg { width: 32px; height: 32px; }
+.grant-hl-label {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.6);
+}
+.grant-hl-value {
+  font-family: var(--font-heading); font-size: 32px; font-weight: 700;
+  color: var(--white); letter-spacing: -1px;
+}
+.grant-hl-desc {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+.grant-new-badge {
+  display: inline-flex; width: fit-content; padding: 4px 12px; border-radius: 2px;
+  background: var(--gold); font-family: var(--font-heading); font-size: 11px;
+  font-weight: 600; color: var(--navy-deep);
+}
+
+/* ===== 03 세제혜택 ===== */
+.tax-cards { display: flex; gap: 24px; margin-bottom: 48px; }
+.tax-card {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  gap: 16px; padding: 32px 24px; border-radius: 8px; transition: transform 0.3s;
+}
+.tax-card:hover { transform: translateY(-4px); }
+.tax-card-1 { background: var(--navy-deep); }
+.tax-card-2 { border: 2px solid var(--blue); }
+.tax-card-3 { border: 2px solid var(--gray-border); }
+.tax-badge {
+  display: inline-flex; padding: 6px 16px; border-radius: 2px;
+  font-family: var(--font-heading); font-size: 12px; font-weight: 600;
+}
+.tax-badge-gold { background: var(--gold); color: var(--navy-deep); }
+.tax-badge-blue { background: #EFF6FF; color: var(--blue); }
+.tax-badge-gray { background: var(--bg-light); color: var(--gray-text); }
+.tax-value {
+  font-family: var(--font-heading); font-size: 48px; font-weight: 700; letter-spacing: -2px;
+}
+.tax-card-1 .tax-value { color: var(--white); }
+.tax-card-2 .tax-value, .tax-card-3 .tax-value { color: var(--navy-deep); }
+.tax-label { font-family: var(--font-body); font-size: 16px; }
+.tax-card-1 .tax-label { color: rgba(255,255,255,0.6); }
+.tax-card-2 .tax-label, .tax-card-3 .tax-label { color: var(--gray-text); }
+
+.tax-limit {
+  display: flex; align-items: center; gap: 12px;
+  padding: 24px 32px; background: #EFF6FF; border-radius: 8px; margin-bottom: 48px;
+}
+.tax-limit-icon { color: var(--blue); flex-shrink: 0; }
+.tax-limit-icon svg { width: 20px; height: 20px; }
+.tax-limit-text {
+  font-family: var(--font-body); font-size: 14px; color: var(--blue); line-height: 1.5;
+}
+
+/* 세액감면 시뮬레이션 */
+.sim-box {
+  background: var(--navy-deep); border: 2px solid var(--blue); border-radius: 12px; padding: 40px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.sim-header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.sim-header-left { display: flex; flex-direction: column; gap: 6px; }
+.sim-tag {
+  display: inline-flex; width: fit-content; padding: 4px 10px; border-radius: 2px;
+  background: var(--gold); font-family: var(--font-heading); font-size: 11px;
+  font-weight: 600; color: var(--navy-deep);
+}
+.sim-title {
+  font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white);
+}
+.sim-condition {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.5);
+}
+.sim-total-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.sim-total-label {
+  font-family: var(--font-body); font-size: 13px; color: var(--gold);
+}
+.sim-total-value {
+  font-family: var(--font-heading); font-size: 40px; font-weight: 700;
+  color: var(--gold); letter-spacing: -1px;
+}
+.sim-divider { height: 1px; background: rgba(255,255,255,0.08); }
+.sim-rows { display: flex; flex-direction: column; }
+.sim-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sim-row:last-child { border-bottom: none; }
+.sim-row-left { display: flex; align-items: center; gap: 16px; }
+.sim-row-badge {
+  display: inline-flex; padding: 3px 10px; border-radius: 2px;
+  font-family: var(--font-heading); font-size: 12px; font-weight: 600;
+}
+.sim-row-badge.gold { background: rgba(245,158,11,0.13); color: var(--gold); }
+.sim-row-badge.blue { background: rgba(27,94,158,0.19); color: #6DB3F2; }
+.sim-row-badge.gray { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6); }
+.sim-row-calc {
+  font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.8);
+}
+.sim-row-val {
+  font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--white);
+}
+.sim-total-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px; background: var(--blue); border-radius: 6px;
+}
+.sim-total-row-left { display: flex; align-items: center; gap: 12px; }
+.sim-total-row-left svg { width: 18px; height: 18px; color: var(--white); }
+.sim-total-row-label {
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--white);
+}
+.sim-total-row-val {
+  font-family: var(--font-heading); font-size: 24px; font-weight: 700;
+  color: var(--gold); letter-spacing: -0.5px;
+}
+
+/* ===== 04 고용장려금 ===== */
+.emp-grid { display: flex; gap: 16px; }
+.emp-card {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  padding: 28px 24px; background: var(--white); border: 1px solid var(--gray-border);
+  border-radius: 8px; transition: transform 0.3s;
+}
+.emp-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.emp-card svg { width: 28px; height: 28px; }
+.emp-type { font-family: var(--font-body); font-size: 13px; color: var(--gray-text); }
+.emp-val { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy-deep); }
+.emp-card-featured {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  padding: 28px 24px; background: var(--navy-deep); border: 2px solid var(--gold);
+  border-radius: 8px; transition: transform 0.3s;
+}
+.emp-card-featured:hover { transform: translateY(-4px); }
+.emp-card-featured svg { width: 28px; height: 28px; color: var(--gold); }
+.emp-card-featured .emp-type { color: rgba(255,255,255,0.6); }
+.emp-card-featured .emp-val { color: var(--gold); font-size: 28px; }
+.emp-card-featured .emp-max {
+  font-family: var(--font-body); font-size: 11px; color: rgba(255,255,255,0.31);
+}
+
+/* ===== 05 우선구매·의무고용 ===== */
+.dual-section { display: flex; gap: 48px; }
+.dual-col {
+  flex: 1; display: flex; flex-direction: column; gap: 32px;
+  padding-left: 24px;
+}
+.dual-col-left { border-left: 3px solid var(--blue); }
+.dual-col-right { border-left: 3px solid var(--gold); }
+.dual-tag {
+  font-family: var(--font-heading); font-size: 13px; font-weight: 600;
+  letter-spacing: 2px; color: var(--blue);
+}
+.dual-col-right .dual-tag { color: var(--blue); }
+.dual-title {
+  font-family: var(--font-heading); font-size: 30px; font-weight: 700;
+  letter-spacing: -0.5px; color: var(--navy-deep);
+}
+.dual-desc {
+  font-family: var(--font-body); font-size: 15px; color: var(--gray-text); line-height: 1.7;
+}
+.dual-stat-cards { display: flex; flex-direction: column; gap: 16px; }
+.dual-stat-card {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; background: var(--bg-light); border-radius: 6px; gap: 16px;
+}
+.dual-stat-label { font-family: var(--font-body); font-size: 14px; color: var(--gray-text); }
+.dual-stat-val {
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--navy-deep);
+}
+.dual-targets { display: flex; flex-direction: column; gap: 8px; }
+.dual-target { display: flex; align-items: center; gap: 8px; }
+.dual-target-dot { width: 6px; height: 6px; background: var(--blue); flex-shrink: 0; }
+.dual-target-text { font-family: var(--font-body); font-size: 14px; color: var(--navy-deep); }
+
+.rate-cards { display: flex; flex-direction: column; gap: 16px; }
+.rate-card {
+  display: flex; justify-content: space-between; align-items: center; padding: 24px; border-radius: 8px;
+}
+.rate-card-primary { background: var(--navy-deep); }
+.rate-card-blue { background: var(--blue); }
+.rate-card-label { display: flex; flex-direction: column; gap: 4px; }
+.rate-card-label-title {
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--white);
+}
+.rate-card-label-sub {
+  font-family: var(--font-body); font-size: 12px; color: rgba(255,255,255,0.5);
+}
+.rate-card-val {
+  font-family: var(--font-heading); font-size: 32px; font-weight: 700; letter-spacing: -1px;
+}
+.rate-card-primary .rate-card-val { color: var(--gold); }
+.rate-card-blue .rate-card-val { color: var(--white); }
+.future-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 16px 20px; background: #FFF7ED; border-radius: 6px;
+}
+.future-row svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+.future-row-text {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500; color: #92400E;
+}
+
+/* ===== 06 정책변화 ===== */
+.policy-section {
+  position: relative; width: 100%; overflow: hidden;
+  background: var(--navy-deep); padding: 80px max(120px, calc((100% - 1160px) / 2));
+}
+.policy-inner {
+  position: relative; z-index: 2;
+}
+.policy-vert-line {
+  position: absolute; left: 0; top: 0; width: 2px; height: 100%;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+}
+.policy-big-num {
+  position: absolute; right: 0; top: -60px;
+  font-family: var(--font-heading); font-size: 300px; font-weight: 700;
+  color: rgba(255,255,255,0.024); letter-spacing: -10px; user-select: none;
+}
+.policy-header {
+  display: flex; flex-direction: column; gap: 16px; width: 700px; margin-bottom: 48px;
+}
+.policy-tag {
+  font-family: var(--font-heading); font-size: 13px; font-weight: 600;
+  letter-spacing: 2px; color: var(--gold);
+}
+.policy-title {
+  font-family: var(--font-heading); font-size: 36px; font-weight: 700;
+  letter-spacing: -1px; color: var(--white);
+}
+.policy-desc {
+  font-family: var(--font-body); font-size: 16px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; max-width: 520px;
+}
+.policy-grid {
+  display: flex; gap: 20px; width: 100%;
+}
+.policy-grid-row1 { margin-bottom: 20px; }
+.policy-grid-row2 { }
+.policy-card {
+  flex: 1; display: flex; flex-direction: column; gap: 16px;
+  padding: 28px; background: rgba(255,255,255,0.05); border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.policy-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+.policy-year-badge {
+  display: inline-flex; width: fit-content; padding: 4px 10px; border-radius: 2px;
+  font-family: var(--font-heading); font-size: 11px; font-weight: 600;
+}
+.policy-year-badge.gold { background: var(--gold); color: var(--navy-deep); }
+.policy-year-badge.blue { background: var(--blue); color: var(--white); }
+.policy-card-title {
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--white);
+}
+.policy-card-desc {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+
+/* ===== 07 통계현황 ===== */
+.st-content { display: flex; gap: 40px; }
+.st-left { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.st-year-row { display: flex; gap: 16px; }
+.st-year-card {
+  flex: 1; display: flex; flex-direction: column; gap: 8px;
+  padding: 20px; border: 1px solid var(--gray-border); border-radius: 8px;
+}
+.st-year-card-active { background: var(--blue); border-color: var(--blue); }
+.st-year-card-active .st-year-label { color: rgba(255,255,255,0.6); }
+.st-year-card-active .st-year-val { color: var(--white); }
+.st-year-label { font-family: var(--font-body); font-size: 13px; color: var(--gray-text); }
+.st-year-val { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy-deep); }
+.st-type-row { display: flex; gap: 16px; }
+.st-type-card {
+  flex: 1; display: flex; flex-direction: column; gap: 8px;
+  padding: 20px; background: var(--bg-light); border-radius: 8px;
+}
+.st-type-label { font-family: var(--font-body); font-size: 13px; color: var(--gray-text); }
+.st-type-val { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--navy-deep); }
+
+.st-right {
+  width: 340px; display: flex; flex-direction: column; gap: 16px;
+  padding: 28px; background: var(--bg-light); border-radius: 8px;
+}
+.st-right-title {
+  font-family: var(--font-heading); font-size: 18px; font-weight: 600; color: var(--navy-deep);
+}
+.st-ind { display: flex; align-items: center; gap: 12px; }
+.st-ind-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.st-ind-dot.blue { background: var(--blue); }
+.st-ind-dot.gold { background: var(--gold); }
+.st-ind-dot.green { background: var(--green); }
+.st-ind-dot.purple { background: var(--purple); }
+.st-ind-text { font-family: var(--font-body); font-size: 14px; color: var(--navy-deep); }
+.st-ind-note { font-family: var(--font-body); font-size: 12px; color: var(--gray-text); }
+.st-ind-note.green { color: var(--green); font-weight: 500; }
+.st-growth {
+  display: flex; align-items: center; gap: 8px;
+  padding: 16px 20px; background: #EFF6FF; border-radius: 6px;
+}
+.st-growth svg { width: 16px; height: 16px; color: var(--blue); flex-shrink: 0; }
+.st-growth-text {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--blue);
+}
+
+.quote-block {
+  display: flex; gap: 20px; padding: 32px 40px;
+  background: var(--bg-light); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0;
+  margin-top: 48px;
+}
+.quote-icon {
+  font-family: var(--font-heading); font-size: 48px; font-weight: 700;
+  color: rgba(27,94,158,0.19); line-height: 0.5; flex-shrink: 0;
+}
+.quote-text { display: flex; flex-direction: column; gap: 12px; }
+.quote-content {
+  font-family: var(--font-body); font-size: 15px; font-style: italic;
+  color: var(--navy-deep); line-height: 1.7;
+}
+.quote-author { font-family: var(--font-body); font-size: 13px; color: var(--gray-text); }
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  position: relative; width: 100%; overflow: hidden;
+  background: linear-gradient(160deg, var(--blue) 0%, var(--navy-deep) 100%);
+  padding: 80px max(120px, calc((100% - 1160px) / 2));
+}
+.cta-deco-circle1 {
+  position: absolute; width: 800px; height: 800px; border-radius: 50%;
+  background: var(--blue); opacity: 0.15; left: -200px; top: -250px;
+}
+.cta-deco-circle2 {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: var(--gold); opacity: 0.06; right: -60px; bottom: -50px;
+}
+.cta-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.cta-title {
+  font-family: var(--font-heading); font-size: 34px; font-weight: 700;
+  color: var(--white); letter-spacing: -1px;
+}
+.cta-desc {
+  width: 500px;
+  font-family: var(--font-body); font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7;
+}
+.cta-btns {
+  display: flex; align-items: center; gap: 16px;
+}
+.cta-btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 40px; background: var(--gold); border-radius: 4px;
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600;
+  color: var(--navy-deep); border: none; cursor: pointer; transition: all 0.25s;
+}
+.cta-btn-primary:hover { background: #e6910a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.3); }
+.cta-btn-primary svg { width: 18px; height: 18px; }
+.cta-btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 40px; border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.38);
+  font-family: var(--font-heading); font-size: 16px; font-weight: 500;
+  color: var(--white); background: none; cursor: pointer; transition: all 0.25s;
+}
+.cta-btn-secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+.cta-btn-secondary svg { width: 18px; height: 18px; }
+.cta-contacts {
+  display: flex; gap: 40px;
+}
+.cta-contact { display: flex; align-items: center; gap: 8px; }
+.cta-contact svg { width: 14px; height: 14px; color: rgba(255,255,255,0.38); }
+.cta-contact-text {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.5);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  display: flex; flex-direction: column; gap: 40px;
+  padding: 60px max(120px, calc((100% - 1160px) / 2)) 40px; background: #080F1A;
+}
+.footer-accent {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--gold) 100%);
+}
+.footer-top { display: flex; justify-content: space-between; }
+.footer-brand { display: flex; flex-direction: column; gap: 16px; width: 320px; }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.footer-logo-mark {
+  width: 28px; height: 28px; background: var(--blue); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-logo-mark svg { width: 14px; height: 14px; color: var(--white); }
+.footer-logo-text {
+  font-family: var(--font-heading); font-size: 16px; font-weight: 600; color: var(--white);
+}
+.footer-brand-desc {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.38); line-height: 1.6;
+}
+.footer-links { display: flex; gap: 64px; }
+.footer-link-group { display: flex; flex-direction: column; gap: 16px; }
+.footer-link-title {
+  font-family: var(--font-heading); font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+}
+.footer-link {
+  font-family: var(--font-body); font-size: 13px; color: rgba(255,255,255,0.31);
+  transition: color 0.2s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.6); }
+.footer-divider { height: 1px; background: rgba(255,255,255,0.08); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy {
+  font-family: var(--font-body); font-size: 12px; color: rgba(255,255,255,0.25);
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.reveal {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .hero { height: auto; min-height: 600px; padding-bottom: 60px; }
+  .hero-content { position: relative; left: auto; top: auto; width: 100%; padding: 80px 40px 0; }
+  .hero-image { display: none; }
+  .section, .policy-section, .cta-section { padding: 60px 40px; }
+  .header { padding: 16px 40px; }
+  .stats-bar-inner { padding: 0 40px; }
+  .footer { padding: 60px 40px 40px; }
+  .grant-highlights { width: 360px; }
+}
+
+@media (max-width: 1024px) {
+  .intro-cards { flex-direction: column; }
+  .grant-content { flex-direction: column; }
+  .grant-highlights { width: 100%; flex-direction: row; }
+  .grant-highlights > * { flex: 1; }
+  .tax-cards { flex-direction: column; }
+  .emp-grid { flex-wrap: wrap; }
+  .emp-card { width: calc(50% - 8px); }
+  .dual-section { flex-direction: column; }
+  .st-content { flex-direction: column; }
+  .st-right { width: 100%; }
+  .footer-top { flex-direction: column; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 16px 20px; }
+  .header-nav { display: none; }
+  .mobile-menu-btn { display: block; }
+  .header-nav.open {
+    display: flex; flex-direction: column; position: absolute;
+    top: 68px; left: 0; right: 0; background: var(--white);
+    padding: 16px 20px; gap: 12px;
+    border-bottom: 1px solid var(--gray-border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 999;
+  }
+  .hero-content { padding: 60px 20px 0; }
+  .hero-h1, .hero-h1-gold { font-size: 32px; }
+  .section, .policy-section, .cta-section { padding: 48px 20px; }
+  .section-title { font-size: 28px; }
+  .stats-bar { height: auto; }
+  .stats-bar-inner { flex-direction: column; padding: 20px; gap: 16px; }
+  .stat-separator { display: none; }
+  .stat-item { width: 100% !important; flex-direction: row; justify-content: space-between; align-items: center; }
+  .emp-grid { flex-direction: column; }
+  .emp-card { width: 100%; }
+  .st-year-row { flex-direction: column; }
+  .st-type-row { flex-direction: column; }
+  .grant-highlights { flex-direction: column; }
+  .policy-header { width: 100%; }
+  .policy-grid { flex-direction: column; }
+  .policy-vert-line, .policy-big-num { display: none; }
+  .cta-desc { width: 100%; }
+  .cta-btns { flex-wrap: wrap; }
+  .cta-contacts { flex-direction: column; gap: 12px; }
+  .footer { padding: 40px 20px; }
+  .footer-links { flex-direction: column; gap: 24px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .hero-cta-row { flex-wrap: wrap; }
+  .dual-section { gap: 32px; }
+  .rate-cards { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-nav">본문 바로가기</a>
+
+<!-- ===== HEADER ===== -->
+<header class="header" role="banner">
+  <a href="#" class="header-logo" aria-label="장애인표준사업장 홈">
+    <div class="header-logo-mark" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
+    </div>
+    <span class="header-logo-text">장애인표준사업장</span>
+  </a>
+  <nav class="header-nav" id="headerNav" aria-label="주요 메뉴">
+    <a href="#intro">제도소개</a>
+    <a href="#benefits">지원혜택</a>
+    <a href="#tax">세제혜택</a>
+    <a href="#incentive">고용장려금</a>
+    <a href="#purchase">우선구매</a>
+    <a href="#policy">정책변화</a>
+    <a href="#stats">통계현황</a>
+  </nav>
+  <a href="#contact" class="header-cta">상담 신청하기</a>
+  <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false" onclick="toggleMenu()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+  </button>
+</header>
+<div class="header-accent"></div>
+
+<main id="main-content">
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-deco-circle1" aria-hidden="true"></div>
+  <div class="hero-deco-circle2" aria-hidden="true"></div>
+  <div class="hero-deco-line1" aria-hidden="true"></div>
+  <div class="hero-deco-line2" aria-hidden="true"></div>
+  <div class="hero-deco-dot1" aria-hidden="true"></div>
+  <div class="hero-deco-dot2" aria-hidden="true"></div>
+  <div class="hero-deco-dot3" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      <span class="hero-badge-text">2026년 정책 업데이트 반영</span>
+    </div>
+    <div id="hero-title">
+      <div class="hero-h1">장애인과 기업이 함께 성장하는</div>
+      <div class="hero-h1-gold">표준사업장의 모든 혜택</div>
+    </div>
+    <p class="hero-subline">최대 10억원 무상지원금, 법인세 100% 감면, 우선구매 보장까지.<br>장애인표준사업장 인증으로 사회적 가치와 경영 혜택을 동시에.</p>
+    <div class="hero-cta-row">
+      <a href="#intro" class="hero-cta-primary">
+        혜택 자세히 보기
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </a>
+      <a href="#contact" class="hero-cta-secondary">인증 요건 확인</a>
+    </div>
+  </div>
+
+  <div class="hero-image" aria-hidden="true">
+    <img src="images/generated-1770611889380.png" alt="장애인과 비장애인이 함께 일하는 밝은 사무실" loading="eager">
+    <div class="hero-image-overlay"></div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR ===== -->
+<div class="stats-bar" role="list" aria-label="주요 수치">
+  <div class="stats-bar-inner">
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">최대 10억원</div>
+      <div class="stat-label">무상지원금</div>
+    </div>
+    <div class="stat-separator" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">법인세 감면 (3년)</div>
+    </div>
+    <div class="stat-separator" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">월 90만원</div>
+      <div class="stat-label">고용장려금 (1인당)</div>
+    </div>
+    <div class="stat-separator" aria-hidden="true"></div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">약 900개소</div>
+      <div class="stat-label">전국 인증 사업장</div>
+    </div>
+  </div>
+  <div class="stat-accent" aria-hidden="true"></div>
+</div>
+
+<!-- ===== 01 제도소개 ===== -->
+<section class="section section-white" id="intro" aria-labelledby="intro-title" style="border-bottom:1px solid #F0F0F0;">
+  <div class="section-header reveal">
+    <div class="section-tag">01 — 제도 소개</div>
+    <h2 class="section-title" id="intro-title">장애인표준사업장이란?</h2>
+    <p class="section-desc">장애인 고용 인원, 고용비율, 시설 및 임금에 관하여 일정 기준에 해당하는 사업장으로, 중증장애인의 안정된 일자리를 창출하고 사회통합기반을 조성하기 위한 제도입니다.</p>
+  </div>
+  <div class="intro-cards">
+    <article class="intro-card reveal">
+      <div class="intro-card-icon blue" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+      </div>
+      <div class="intro-card-title">일반형</div>
+      <div class="intro-card-desc">개별 사업주가 독자적으로 설립·운영. 무상지원금 최대 10억원 지원.</div>
+    </article>
+    <article class="intro-card reveal reveal-d1">
+      <div class="intro-card-icon gold" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </div>
+      <div class="intro-card-title">자회사형</div>
+      <div class="intro-card-desc">모회사가 자회사를 설립하여 장애인 간접 고용. 최대 20억원 지원.</div>
+    </article>
+    <article class="intro-card reveal reveal-d2">
+      <div class="intro-card-icon green" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>
+      </div>
+      <div class="intro-card-title">사회적경제기업형</div>
+      <div class="intro-card-desc">사회적기업, 협동조합 형태. 창업자금 최대 5천만원 별도 지원.</div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 02 정부지원금 ===== -->
+<section class="section section-alt" id="benefits" aria-labelledby="grant-title">
+  <div class="section-header reveal">
+    <div class="section-tag">02 — 정부 지원금</div>
+    <h2 class="section-title" id="grant-title">최대 15억원의 무상지원금 혜택</h2>
+    <p class="section-desc">장애인표준사업장 설립·운영에 필요한 시설과 장비를 정부가 지원합니다. 2025년부터 도약지원형 추가 지원이 시행 중입니다.</p>
+  </div>
+  <div class="grant-content reveal">
+    <div class="grant-table-wrap">
+      <div class="grant-table-header">지원 항목별 상세</div>
+      <div class="grant-row">
+        <span class="grant-row-label">작업·부대·편의시설</span>
+        <span class="grant-row-value">실투자금의 3/4</span>
+      </div>
+      <div class="grant-row">
+        <span class="grant-row-label">출퇴근용 승합자동차</span>
+        <span class="grant-row-value">전액 지원</span>
+      </div>
+      <div class="grant-row">
+        <span class="grant-row-label">고용관리 전문가 임금</span>
+        <span class="grant-row-value">월 최대 300만원 (2년)</span>
+      </div>
+      <div class="grant-row">
+        <span class="grant-row-label">창업자금 (3년 이내)</span>
+        <span class="grant-row-value">최대 5천만원</span>
+      </div>
+      <div class="grant-row">
+        <span class="grant-row-label">신규채용 1인당 산정기준</span>
+        <span class="grant-row-value">4,000만원</span>
+      </div>
+    </div>
+    <div class="grant-highlights">
+      <div class="grant-highlight grant-highlight-primary">
+        <div class="grant-hl-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+        </div>
+        <div class="grant-hl-label">기본 무상지원금</div>
+        <div class="grant-hl-value">최대 10억원</div>
+        <div class="grant-hl-desc">장애인 신규 채용 1인당 4,000만원 기준으로 산정</div>
+      </div>
+      <div class="grant-highlight grant-highlight-blue">
+        <div class="grant-hl-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        </div>
+        <div class="grant-hl-label">2025년 신설 추가 지원</div>
+        <div class="grant-hl-value">+최대 5억원</div>
+        <div class="grant-hl-desc">10억원 전액 수령 사업장이 추가 개선·고용 시 지원</div>
+        <div class="grant-new-badge">NEW 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 세제혜택 ===== -->
+<section class="section section-light" id="tax" aria-labelledby="tax-title">
+  <div class="section-header reveal">
+    <div class="section-tag">03 — 세제 혜택</div>
+    <h2 class="section-title" id="tax-title">법인세(소득세) 최대 10년간 단계적 감면</h2>
+    <p class="section-desc">조세특례제한법 제85조의6에 따라 장애인표준사업장은 강력한 세제혜택을 받을 수 있습니다.</p>
+  </div>
+
+  <div class="tax-cards reveal">
+    <div class="tax-card tax-card-1">
+      <div class="tax-badge tax-badge-gold">최초 3년</div>
+      <div class="tax-value">100%</div>
+      <div class="tax-label">법인세 전액 감면</div>
+    </div>
+    <div class="tax-card tax-card-2">
+      <div class="tax-badge tax-badge-blue">이후 2년</div>
+      <div class="tax-value">50%</div>
+      <div class="tax-label">법인세 절반 감면</div>
+    </div>
+    <div class="tax-card tax-card-3">
+      <div class="tax-badge tax-badge-gray">이후 5년</div>
+      <div class="tax-value">30%</div>
+      <div class="tax-label">법인세 감면 유지</div>
+    </div>
+  </div>
+
+  <div class="tax-limit reveal">
+    <div class="tax-limit-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    </div>
+    <div class="tax-limit-text">감면 한도: 1억원 + (장애인 상시근로자 수 x 2,000만원)  |  총 10년간 단계적 감면 적용  |  적용기한: 2028년 12월 31일까지 인증 사업장</div>
+  </div>
+
+  <!-- 세액감면 시뮬레이션 -->
+  <div class="sim-box reveal">
+    <div class="sim-header">
+      <div class="sim-header-left">
+        <div class="sim-tag">시뮬레이션</div>
+        <div class="sim-title">10년간 세액감면 혜택 예시</div>
+        <div class="sim-condition">연간 법인세 3억원 · 장애인 근로자 10명 기준</div>
+      </div>
+      <div class="sim-total-wrap">
+        <div class="sim-total-label">10년간 총 감면액</div>
+        <div class="sim-total-value">16.5억원</div>
+      </div>
+    </div>
+    <div class="sim-divider"></div>
+    <div class="sim-rows">
+      <div class="sim-row">
+        <div class="sim-row-left">
+          <span class="sim-row-badge gold">1~3년차</span>
+          <span class="sim-row-calc">3억원 × 100% × 3년</span>
+        </div>
+        <div class="sim-row-val">9억원</div>
+      </div>
+      <div class="sim-row">
+        <div class="sim-row-left">
+          <span class="sim-row-badge blue">4~5년차</span>
+          <span class="sim-row-calc">3억원 × 50% × 2년</span>
+        </div>
+        <div class="sim-row-val">3억원</div>
+      </div>
+      <div class="sim-row">
+        <div class="sim-row-left">
+          <span class="sim-row-badge gray">6~10년차</span>
+          <span class="sim-row-calc">3억원 × 30% × 5년</span>
+        </div>
+        <div class="sim-row-val">4.5억원</div>
+      </div>
+      <div class="sim-total-row">
+        <div class="sim-total-row-left">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          <span class="sim-total-row-label">10년간 총 세액감면 혜택</span>
+        </div>
+        <div class="sim-total-row-val">16.5억원</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 고용장려금 ===== -->
+<section class="section section-alt" id="incentive" aria-labelledby="emp-title" style="border-top:1px solid var(--gray-border);">
+  <div class="section-header reveal">
+    <div class="section-tag">04 — 고용 장려금</div>
+    <h2 class="section-title" id="emp-title">장애인 고용 시 매월 지급되는 장려금</h2>
+    <p class="section-desc">의무고용률을 초과하여 장애인을 고용하는 사업주에게 매월 장려금이 지급됩니다.</p>
+  </div>
+  <div class="emp-grid reveal">
+    <div class="emp-card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1B5E9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div class="emp-type">경증 남성</div>
+      <div class="emp-val">월 35만원</div>
+    </div>
+    <div class="emp-card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div class="emp-type">경증 여성</div>
+      <div class="emp-val">월 50만원</div>
+    </div>
+    <div class="emp-card">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1B5E9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <div class="emp-type">중증 남성</div>
+      <div class="emp-val">월 70만원</div>
+    </div>
+    <div class="emp-card-featured">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <div class="emp-type">중증 여성</div>
+      <div class="emp-val">월 90만원</div>
+      <div class="emp-max">1인당 월 최대 지급액</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 우선구매·의무고용 ===== -->
+<section class="section section-white" id="purchase" aria-labelledby="dual-title">
+  <div class="section-header reveal" style="margin-bottom:32px;">
+    <div class="section-tag">05 — 우선구매·의무고용</div>
+  </div>
+  <div class="dual-section reveal">
+    <div class="dual-col dual-col-left">
+      <div class="dual-tag">우선구매 제도</div>
+      <h2 class="dual-title" id="dual-title">공공기관 우선구매 의무</h2>
+      <p class="dual-desc">공공기관은 장애인표준사업장의 생산품을 우선적으로 구매해야 할 의무가 있습니다.</p>
+      <div class="dual-stat-cards">
+        <div class="dual-stat-card">
+          <span class="dual-stat-label">최소 구매 목표</span>
+          <span class="dual-stat-val">총 구매액의 0.8% 이상</span>
+        </div>
+        <div class="dual-stat-card">
+          <span class="dual-stat-label">2025년 계획</span>
+          <span class="dual-stat-val">9,582억원 (1.35%)</span>
+        </div>
+      </div>
+      <div class="dual-targets">
+        <div class="dual-target">
+          <div class="dual-target-dot" aria-hidden="true"></div>
+          <span class="dual-target-text">국가기관 및 지방자치단체</span>
+        </div>
+        <div class="dual-target">
+          <div class="dual-target-dot" aria-hidden="true"></div>
+          <span class="dual-target-text">공공기관 및 지방공기업</span>
+        </div>
+      </div>
+    </div>
+    <div class="dual-col dual-col-right">
+      <div class="dual-tag">의무고용률</div>
+      <h2 class="dual-title">2026년 기준 의무고용률</h2>
+      <p class="dual-desc">50인 이상 사업장은 장애인 의무고용률을 준수해야 하며, 미달 시 부담금을 납부합니다.</p>
+      <div class="rate-cards">
+        <div class="rate-card rate-card-primary">
+          <div class="rate-card-label">
+            <div class="rate-card-label-title">민간 기업</div>
+            <div class="rate-card-label-sub">50인 이상 사업장</div>
+          </div>
+          <div class="rate-card-val">3.1%</div>
+        </div>
+        <div class="rate-card rate-card-blue">
+          <div class="rate-card-label">
+            <div class="rate-card-label-title">공공 부문</div>
+            <div class="rate-card-label-sub">국가·지자체</div>
+          </div>
+          <div class="rate-card-val">3.8%</div>
+        </div>
+      </div>
+      <div class="future-row">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        <span class="future-row-text">2029년 목표: 민간 3.5% / 공공 4.0%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 정책변화 ===== -->
+<section class="policy-section" id="policy" aria-labelledby="policy-title">
+  <div class="policy-inner">
+    <div class="policy-vert-line" aria-hidden="true"></div>
+    <div class="policy-big-num" aria-hidden="true">26</div>
+
+    <div class="policy-header reveal">
+      <div class="policy-tag">06 — 2025-2026 정책 변화</div>
+      <h2 class="policy-title" id="policy-title">더 강화되는 지원 정책</h2>
+      <p class="policy-desc">2025-2026년 주요 정책 변화로 장애인표준사업장에 대한 지원이 대폭 확대됩니다.</p>
+    </div>
+
+    <div class="policy-grid policy-grid-row1 reveal">
+      <article class="policy-card">
+        <div class="policy-year-badge gold">2025</div>
+        <div class="policy-card-title">무상지원금 추가 지원</div>
+        <div class="policy-card-desc">10억원 전액 수령 사업장에 최대 5억원 추가 지원</div>
+      </article>
+      <article class="policy-card">
+        <div class="policy-year-badge gold">2025</div>
+        <div class="policy-card-title">채용 기준 완화</div>
+        <div class="policy-card-desc">신규 채용 기준금액 3,000만원에서 4,000만원으로 상향</div>
+      </article>
+      <article class="policy-card">
+        <div class="policy-year-badge blue">2026</div>
+        <div class="policy-card-title">세액감면 기한 연장</div>
+        <div class="policy-card-desc">적용기한 2028년 12월 31일까지 연장, 인증 사업장 확대 적용</div>
+      </article>
+    </div>
+
+    <div class="policy-grid policy-grid-row2 reveal reveal-d2">
+      <article class="policy-card">
+        <div class="policy-year-badge gold">2025</div>
+        <div class="policy-card-title">적합 직무 확대</div>
+        <div class="policy-card-desc">발달장애인 적합 직무 36개에서 42개로 확대</div>
+      </article>
+      <article class="policy-card">
+        <div class="policy-year-badge blue">2026</div>
+        <div class="policy-card-title">자회사형 규제 완화</div>
+        <div class="policy-card-desc">지주회사 체제 대기업 자회사형 설립 용이화</div>
+      </article>
+      <article class="policy-card">
+        <div class="policy-year-badge blue">2026</div>
+        <div class="policy-card-title">업종 다양화</div>
+        <div class="policy-card-desc">IT, 디지털, 친환경 등 미래 유망 분야로 확대</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 07 통계현황 ===== -->
+<section class="section section-white" id="stats" aria-labelledby="st-title">
+  <div class="section-header reveal">
+    <div class="section-tag">07 — 현황 및 통계</div>
+    <h2 class="section-title" id="st-title">꾸준히 성장하는 장애인표준사업장</h2>
+  </div>
+  <div class="st-content reveal">
+    <div class="st-left">
+      <div class="st-year-row">
+        <div class="st-year-card">
+          <div class="st-year-label">2023년</div>
+          <div class="st-year-val">628개소</div>
+        </div>
+        <div class="st-year-card">
+          <div class="st-year-label">2024년</div>
+          <div class="st-year-val">750개소</div>
+        </div>
+        <div class="st-year-card st-year-card-active">
+          <div class="st-year-label">2025년</div>
+          <div class="st-year-val">900개소</div>
+        </div>
+      </div>
+      <div class="st-type-row">
+        <div class="st-type-card">
+          <div class="st-type-label">일반형</div>
+          <div class="st-type-val">약 600개소</div>
+        </div>
+        <div class="st-type-card">
+          <div class="st-type-label">자회사형</div>
+          <div class="st-type-val">약 300개소</div>
+        </div>
+      </div>
+    </div>
+    <div class="st-right">
+      <div class="st-right-title">주요 업종 분포</div>
+      <div class="st-ind">
+        <div class="st-ind-dot blue" aria-hidden="true"></div>
+        <span class="st-ind-text">제조업</span>
+        <span class="st-ind-note">최대 비중</span>
+      </div>
+      <div class="st-ind">
+        <div class="st-ind-dot gold" aria-hidden="true"></div>
+        <span class="st-ind-text">서비스업</span>
+        <span class="st-ind-note">세탁·청소·카페·베이커리</span>
+      </div>
+      <div class="st-ind">
+        <div class="st-ind-dot green" aria-hidden="true"></div>
+        <span class="st-ind-text">IT/디지털</span>
+        <span class="st-ind-note green">확대 추세</span>
+      </div>
+      <div class="st-ind">
+        <div class="st-ind-dot purple" aria-hidden="true"></div>
+        <span class="st-ind-text">친환경</span>
+        <span class="st-ind-note">재활용·환경 관련</span>
+      </div>
+      <div class="st-growth">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        <span class="st-growth-text">매년 약 20% 이상 성장 중</span>
+      </div>
+    </div>
+  </div>
+  <div class="quote-block reveal">
+    <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+    <div class="quote-text">
+      <p class="quote-content">장애인표준사업장은 단순히 장애인을 고용하는 것을 넘어서, 장애인이 중심이 되는 직업환경을 조성하고, 비장애인 근로자와 동등한 조건에서 근무할 수 있도록 환경을 구축하는 데 목적이 있습니다.</p>
+      <span class="quote-author">— 한국장애인고용공단</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section" id="contact" aria-labelledby="cta-title">
+  <div class="cta-deco-circle1" aria-hidden="true"></div>
+  <div class="cta-deco-circle2" aria-hidden="true"></div>
+  <div class="cta-content">
+    <h2 class="cta-title" id="cta-title">지금 바로 장애인표준사업장 혜택을 확인하세요</h2>
+    <p class="cta-desc">한국장애인고용공단에서 제도 전반에 대한 상담과 인증 절차를 안내받으실 수 있습니다.</p>
+    <div class="cta-btns">
+      <a href="tel:1588-1519" class="cta-btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        1588-1519 전화 상담
+      </a>
+      <a href="https://www.kead.or.kr" target="_blank" rel="noopener noreferrer" class="cta-btn-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        공단 홈페이지 방문
+      </a>
+    </div>
+    <div class="cta-contacts">
+      <div class="cta-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="cta-contact-text">한국장애인고용공단 1588-1519</span>
+      </div>
+      <div class="cta-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="cta-contact-text">고용노동부 1350</span>
+      </div>
+      <div class="cta-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="cta-contact-text">국세상담센터 126</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-accent" aria-hidden="true"></div>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-mark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
+        </div>
+        <span class="footer-logo-text">장애인표준사업장</span>
+      </div>
+      <p class="footer-brand-desc">장애인과 기업이 함께 성장하는 표준사업장 제도를 소개합니다.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-link-group">
+        <div class="footer-link-title">제도 안내</div>
+        <a href="#intro" class="footer-link">제도 소개</a>
+        <a href="#" class="footer-link">인증 요건</a>
+        <a href="#" class="footer-link">인증 절차</a>
+        <a href="#intro" class="footer-link">유형별 분류</a>
+      </div>
+      <div class="footer-link-group">
+        <div class="footer-link-title">혜택 정보</div>
+        <a href="#benefits" class="footer-link">무상지원금</a>
+        <a href="#tax" class="footer-link">세제 혜택</a>
+        <a href="#incentive" class="footer-link">고용장려금</a>
+        <a href="#" class="footer-link">우선구매 제도</a>
+      </div>
+      <div class="footer-link-group">
+        <div class="footer-link-title">관련 기관</div>
+        <a href="https://www.kead.or.kr" target="_blank" rel="noopener noreferrer" class="footer-link">한국장애인고용공단</a>
+        <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer" class="footer-link">고용노동부</a>
+        <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer" class="footer-link">정부24</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <span class="footer-copy">2026 장애인표준사업장 종합 안내. 본 자료는 공개 자료 기반으로 작성되었습니다.</span>
+    <span class="footer-copy">최신 정보는 관련 기관에 직접 확인하시기 바랍니다.</span>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  const nav = document.getElementById('headerNav');
+  const btn = document.querySelector('.mobile-menu-btn');
+  const isOpen = nav.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+}
+
+// Header scroll effect
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  header.style.boxShadow = window.scrollY > 10 ? '0 1px 12px rgba(0,0,0,0.08)' : 'none';
+}, { passive: true });
+
+// Intersection Observer for reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth scroll & close mobile menu
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile menu
+      const nav = document.getElementById('headerNav');
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+});
+
+// Active nav highlighting on scroll
+const navLinks = document.querySelectorAll('.header-nav a');
+const sectionMap = {
+  'intro': '#intro',
+  'benefits': '#benefits',
+  'tax': '#tax',
+  'incentive': '#incentive',
+  'purchase': '#purchase',
+  'policy': '#policy',
+  'stats': '#stats',
+  'contact': '#stats'
+};
+
+function updateActiveNav() {
+  const scrollY = window.scrollY;
+  let activeHref = '#intro';
+
+  document.querySelectorAll('section[id]').forEach(section => {
+    const top = section.offsetTop - 150;
+    if (scrollY >= top) {
+      const id = section.getAttribute('id');
+      activeHref = sectionMap[id] || '#' + id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === activeHref);
+  });
+}
+
+window.addEventListener('scroll', updateActiveNav, { passive: true });
+updateActiveNav();
+</script>
+
+</body>
+</html>
